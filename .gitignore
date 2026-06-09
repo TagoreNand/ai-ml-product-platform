@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.Python
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Data
+data/*.parquet
+data/*.csv
+!data/.gitkeep
+
+# Trained model artifacts (models belong in a registry, not git).
+# Regenerate with `make train`; CI trains before tests.
+artifacts/*
+!artifacts/.gitkeep
+/scored_output/
+
+# Local delivery helpers (not part of the project)
+pulse360-history.bundle
+PUSH_INSTRUCTIONS.md
+
+# Runtime stores (extensions)
+/feature_store/
+/feedback/
