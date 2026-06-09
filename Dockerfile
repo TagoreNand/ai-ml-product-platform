@@ -13,7 +13,6 @@ COPY src ./src
 RUN pip install --upgrade pip && pip install ".[explain]"
 
 COPY scripts ./scripts
-COPY docs ./docs
 
 # Train + register the production models into the image so it is runnable as-is.
 RUN python scripts/train_models.py
