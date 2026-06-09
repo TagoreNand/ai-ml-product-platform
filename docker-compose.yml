@@ -1,0 +1,19 @@
+services:
+  pulse360-api:
+    build: .
+    image: pulse360-product-intelligence:latest
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_ARTIFACT_DIR: artifacts
+      COPILOT_USE_MOCK: "true"
+      LOG_JSON: "true"
+      ENVIRONMENT: prod
+      RATE_LIMIT_ENABLED: "true"
+      # API_KEY: set this to require X-API-Key on protected routes
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health/ready').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
