@@ -13,7 +13,7 @@ not just a notebook that fits a model.
 
 ---
 
-## Why this is senior-level
+## Why this is improved
 
 | Area | What it demonstrates |
 |---|---|
